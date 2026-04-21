@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Oriku | Software Engineer</title>
+    <meta name="description" content="Portfolio of Samuel Oriku, Software Engineer">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Geometric Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- Canvas Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <a href="#" class="logo">SO.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">SAMUEL ORIKU</h1>
+            <h2 class="typewriter-container">
+                <span id="typewriter-text"></span><span class="cursor">_</span>
+            </h2>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn glass-btn glowing-btn">View My Projects</a>
+                <a href="#contact" class="btn glass-btn">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="glass-panel about-panel fade-in">
+                <p class="summary-text">
+                    Software engineer proficient in the full development lifecycle—from requirements analysis and system design to development, integration, release, and maintenance.
+                </p>
+                <p class="summary-text">
+                    Strong in engineering practices and code quality, with experience in performance optimization, stability, CI/CD, and automation testing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="glass-card skill-card fade-in">
+                    <h3>Programming Languages</h3>
+                    <p>[Java / Python / Go / Node.js]</p>
+                </div>
+                <div class="glass-card skill-card fade-in" style="transition-delay: 0.1s">
+                    <h3>Frameworks/Tech</h3>
+                    <p>[Spring Boot / React / FastAPI]</p>
+                </div>
+                <div class="glass-card skill-card fade-in" style="transition-delay: 0.2s">
+                    <h3>Databases & Caching</h3>
+                    <p>[PostgreSQL / MongoDB / Redis]</p>
+                </div>
+                <div class="glass-card skill-card fade-in" style="transition-delay: 0.3s">
+                    <h3>Messaging/Middleware</h3>
+                    <p>[Kafka / RabbitMQ]</p>
+                </div>
+                <div class="glass-card skill-card fade-in" style="transition-delay: 0.4s">
+                    <h3>Cloud & Deployment</h3>
+                    <p>[AWS / Docker / Kubernetes]</p>
+                </div>
+                <div class="glass-card skill-card fade-in" style="transition-delay: 0.5s">
+                    <h3>Engineering Skills</h3>
+                    <p>[CI/CD / TDD / System Design]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="glass-card project-card fade-in">
+                    <div class="project-header">
+                        <h3>SokoYetu Platform</h3>
+                        <span class="tech-stack">FastAPI, React, PostgreSQL</span>
+                    </div>
+                    <div class="project-body">
+                        <h4>Responsibilities:</h4>
+                        <p>Architected and developed a full-stack hyperlocal delivery application with role-based features and M-Pesa integration.</p>
+                        <h4>Results:</h4>
+                        <p>Improved delivery efficiency by 40% and established a secure escrow ecosystem, facilitating trusted community transactions.</p>
+                        <div class="project-links" style="margin-top: 1.5rem;">
+                            <a href="https://motugutwaa.pythonanywhere.com/sokoyetu" target="_blank" rel="noopener" class="btn glass-btn glowing-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass-card project-card fade-in" style="transition-delay: 0.2s">
+                    <div class="project-header">
+                        <h3>Enterprise Forgery Tracker</h3>
+                        <span class="tech-stack">Python, EasyOCR, Siamese Networks</span>
+                    </div>
+                    <div class="project-body">
+                        <h4>Responsibilities:</h4>
+                        <p>Built a robust document authenticity verification system tracking document hierarchies and analyzing text logic and visual traits.</p>
+                        <h4>Results:</h4>
+                        <p>Reduced document processing verification time by 60% with an automated SMTP evidence dispatch, enhancing organizational data security.</p>
+                        <div class="project-links" style="margin-top: 1.5rem;">
+                            <a href="https://motugutwaa .pythonanywhere.com/forgery" target="_blank" rel="noopener" class="btn glass-btn glowing-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="glass-card project-card fade-in" style="transition-delay: 0.4s">
+                    <div class="project-header">
+                        <h3>Interactive Web Portfolio</h3>
+                        <span class="tech-stack">HTML5, Vanilla CSS, JavaScript</span>
+                    </div>
+                    <div class="project-body">
+                        <h4>Responsibilities:</h4>
+                        <p>Designed and built a highly interactive, responsive portfolio with custom geometric cursor effects, particle background canvas, and glassmorphism UI components.</p>
+                        <h4>Results:</h4>
+                        <p>Delivered a fast, visually engaging self-branding platform with zero dependencies, ensuring seamless user experience across a wide range of devices.</p>
+                        <div class="project-links" style="margin-top: 1.5rem;">
+                            <a href="https://motugutwaa.pythonanywhere.com/portfolio" target="_blank" rel="noopener" class="btn glass-btn glowing-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="timeline">
+                <div class="glass-panel timeline-item fade-in">
+                    <div class="timeline-date">2020 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Kirinyaga University</h3>
+                        <h4>Bachelor of Science in Software Engineering</h4>
+                        <p>Currently pursuing my degree, focusing on distributed systems, software engineering principles, and scalable architectures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer/Contact Section -->
+    <footer id="contact" class="footer glass-panel">
+        <div class="footer-container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <div class="contact-grid fade-in">
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+254759560084" class="contact-link">+254 759 560 084</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:samueloriku77@gmail.com" class="contact-link">samueloriku77@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/samueloriku" target="_blank" rel="noopener" class="contact-link">github.com/samueloriku</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Website</span>
+                    <a href="#" class="contact-link">samueloriku.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Samuel Oriku. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

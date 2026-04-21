@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.env.*
+venv/
+env/
+ENV/
+
+# Databases
+*.db
+*.sqlite3
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+flask_session/
+uploads/
+
+# Models
+models/
+originals/
+dvs/
+reports/
+path/
+*.pkl
+*.h5
+*.joblib

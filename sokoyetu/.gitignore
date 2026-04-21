@@ -1,0 +1,116 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+sokoyetu.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+.eslintcache
+
+# Build outputs
+dist/
+build/
+out/
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+*.cover
+.hypothesis/
+
+# Dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Uploads
+uploads/
+!uploads/.gitkeep
+
+# Uploads Cache
+temp/
+.cache/
+
+# IDE temp files
+.pyc
+*.pyo
+
+# Environment-specific
+.env.test
+.env.ci
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Secrets
+secrets/
+.secrets/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+.kube/
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+
+# WebSocket and Runtime
+*.sock
+
+# Generated files
+generated/
+.generated/
