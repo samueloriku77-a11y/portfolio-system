@@ -46,8 +46,6 @@ yarn-error.log
 .eslintcache
 
 # Build outputs
-dist/
-build/
 out/
 
 # Test coverage
