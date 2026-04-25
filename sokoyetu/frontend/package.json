@@ -1,0 +1,8 @@
+{
+  "name": "sokoyetu-frontend-static",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Deploying static files...'",
+    "install": "echo 'No dependencies needed'"
+  }
+}
