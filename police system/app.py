@@ -30,9 +30,16 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key-12345'
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['ORIGINALS_FOLDER'] = 'originals'
-app.config['REPORTS_FOLDER'] = 'reports'
+if os.getenv("VERCEL"):
+    app.config['UPLOAD_FOLDER'] = '/tmp/uploads'
+    app.config['ORIGINALS_FOLDER'] = '/tmp/originals'
+    app.config['REPORTS_FOLDER'] = '/tmp/reports'
+    app.config['SESSION_FILE_DIR'] = '/tmp/flask_session'
+else:
+    app.config['UPLOAD_FOLDER'] = 'uploads'
+    app.config['ORIGINALS_FOLDER'] = 'originals'
+    app.config['REPORTS_FOLDER'] = 'reports'
+
 app.config['MAX_CONTENT_LENGTH'] = 25 * 1024 * 1024  # 25MB
 app.config['SESSION_TYPE'] = 'filesystem'
 
