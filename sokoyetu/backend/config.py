@@ -9,10 +9,15 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 # Supports SQLite (default), PostgreSQL, and MySQL
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_TYPE = os.getenv("DATABASE_TYPE", "sqlite")
+
+if DATABASE_URL:
+    if "sqlite" in DATABASE_URL:
+        DATABASE_TYPE = "sqlite"
+    else:
+        DATABASE_TYPE = "mysql"  # Default to pool config for anything not sqlite
 
 if not DATABASE_URL:
-    DATABASE_TYPE = os.getenv("DATABASE_TYPE", "sqlite")  # 'sqlite', 'postgresql', 'mysql'
-
     # SQLite (Default - no setup needed)
     if DATABASE_TYPE == "sqlite":
         DATABASE_URL = "sqlite:///./sokoyetu.db"
