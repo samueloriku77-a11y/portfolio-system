@@ -18,6 +18,12 @@ if DATABASE_URL:
         DATABASE_TYPE = "mysql"  # Default to pool config for anything not sqlite
 
 if not DATABASE_URL:
+    if os.getenv("VERCEL"):
+        raise RuntimeError(
+            "CRITICAL ERROR: No DATABASE_URL found in Vercel Environment Variables. "
+            "Please add the Aiven MySQL database link in Vercel Settings -> Environment Variables."
+        )
+
     # SQLite (Default - no setup needed)
     if DATABASE_TYPE == "sqlite":
         DATABASE_URL = "sqlite:///./sokoyetu.db"

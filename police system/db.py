@@ -5,7 +5,7 @@ import hashlib
 db = SQLAlchemy()
 
 class User(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'police_users'
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
@@ -39,7 +39,7 @@ class VerificationResult(db.Model):
     __tablename__ = 'verification_results'
     
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=False)
     filename = db.Column(db.String(255), nullable=False)
     similarity = db.Column(db.Float, nullable=False)
     status = db.Column(db.String(50), nullable=False)  # Authentic, Suspicious, Forged
@@ -89,7 +89,7 @@ class AuditLog(db.Model):
     __tablename__ = 'audit_logs'
     
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=True)
     action = db.Column(db.String(255), nullable=False)
     details = db.Column(db.Text, nullable=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
@@ -107,7 +107,7 @@ class DocumentTrackerLog(db.Model):
     __tablename__ = 'document_tracker_logs'
     
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=False)
     filename = db.Column(db.String(255), nullable=False)
     status = db.Column(db.String(50), nullable=False) # EDITED/FORGED or AUTHENTIC
     similarity_score = db.Column(db.Float, nullable=True)
@@ -138,7 +138,7 @@ class OrganizationReferenceDocument(db.Model):
     embedding_data = db.Column(db.LargeBinary, nullable=True)
     should_not_edit = db.Column(db.Boolean, default=True)  # True means any edits should be flagged
     description = db.Column(db.Text, nullable=True)
-    uploaded_by_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    uploaded_by_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
     def to_dict(self):
@@ -161,7 +161,7 @@ class DocumentEditLog(db.Model):
     ref_document_id = db.Column(db.Integer, db.ForeignKey('organization_reference_documents.id'), nullable=True)
     original_filename = db.Column(db.String(255), nullable=False)
     uploaded_filename = db.Column(db.String(255), nullable=False)
-    uploader_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    uploader_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=False)
     uploader_office = db.Column(db.String(255), nullable=True)  # Office/branch name
     similarity_score = db.Column(db.Float, nullable=False)  # How similar the documents are (0-1)
     changed_regions_count = db.Column(db.Integer, default=0)  # Number of changed regions
@@ -169,7 +169,7 @@ class DocumentEditLog(db.Model):
     diff_heatmap_b64 = db.Column(db.Text(length=16777215), nullable=True)  # Base64 heatmap showing changes
     change_details = db.Column(db.JSON, nullable=True)  # JSON with detailed change info
     email_sent_to_admin = db.Column(db.Boolean, default=False)
-    admin_notified_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)  # Which admin was notified
+    admin_notified_id = db.Column(db.Integer, db.ForeignKey('police_users.id'), nullable=True)  # Which admin was notified
     timestamp = db.Column(db.DateTime, default=datetime.utcnow, index=True)
     
     def to_dict(self):
